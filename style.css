@@ -67,6 +67,7 @@ body {
 
 .nav .item i {
     text-align: center;
+    cursor: pointer;
 }
 
 .nav .sep {
