@@ -12,7 +12,7 @@
 
     <script>
         console.log = function (...data) {
-            data.forEach((d) => document.writeln(`Log: ${d}\n`))
+            data.forEach((d) => document.writeln(`Log: ${d}<br>`))
         }
         document.getElementById('connectButton').addEventListener('click', async () => {
             try {
