@@ -35,8 +35,8 @@ sep {
 
 .nav {
     display: flex;
+    flex-direction: row;
     background-color: var(--clr-bg-2);
-    border: 1px solid var(--clr-brd-1);
 }
 
 .nav .item {
@@ -46,7 +46,7 @@ sep {
     padding: 10px 15px;
     cursor: pointer;
     transition: background-color 0.3s;
-    border-bottom: 3px solid;
+    border-bottom: 1px solid;
     border-bottom-color: var(--clr-primary-1);
 }
 
@@ -56,6 +56,7 @@ sep {
 
 .nav .item.selected {
     color: var(--clr-primary-1);
+    border-bottom-width: 2px;
     border-bottom-color: var(--clr-primary-1);
 }
 
