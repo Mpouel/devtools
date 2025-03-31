@@ -37,11 +37,19 @@ body {
     box-shadow: inset 0 -2px 0 var(--clr-brd-2);
 }
 
-.nav > div {
+.nav>div {
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: row;
+}
+
+.nav .sec1, .nav .pri {
+    float: left;
+}
+
+.nav .sec2 {
+    float: right;
 }
 
 .nav .item {
