@@ -17,28 +17,33 @@
         }
         document.getElementById('connectButton').addEventListener('click', async () => {
             try {
-                // Request the Bluetooth device
+                // Request any Bluetooth device
                 const device = await navigator.bluetooth.requestDevice({
-                    acceptAllDevices: true,
-                    optionalServices: ['battery_service'] // Example optional service
+                    acceptAllDevices: true
                 });
 
                 console.log('Connected to device:', device);
-
-                // Get the Serial Port service
+                
+                // Connect to the GATT server
                 const server = await device.gatt.connect();
-                const service = await server.getPrimaryService('serial');
 
-                // Get the characteristic for reading data
-                const characteristic = await service.getCharacteristic('tx');
+                // Get all primary services
+                const services = await server.getPrimaryServices();
 
-                // Enable notifications to receive data
-                await characteristic.startNotifications().then(char => {
-                    char.addEventListener('characteristicvaluechanged', handleData);
-                });
+                // Iterate over services and get characteristics
+                for (const service of services) {
+                    console.log('Service:', service.uuid);
+                    document.getElementById('output').textContent += `Service: ${service.uuid}\n`;
+
+                    const characteristics = await service.getCharacteristics();
+                    for (const characteristic of characteristics) {
+                        console.log('Characteristic:', characteristic.uuid);
+                        document.getElementById('output').textContent += `  Characteristic: ${characteristic.uuid}\n`;
+                    }
+                }
 
             } catch (error) {
-                console.log('Error: ', error);
+                console.error('Error:', error);
             }
         });
 
