@@ -51,7 +51,7 @@ body {
     cursor: pointer;
     transition: background-color 0.3s;
     border-bottom: 1px solid;
-    border-bottom-color: var(--clr-primary-1);
+    border-bottom-color: var(--clr-bg-3);
     display: flex;
     align-items: center;
     align-content: center;
