@@ -19,6 +19,7 @@ body {
     padding: 0;
     display: flex;
     flex-direction: row;
+    width: 100%;
 }
 
 .devtools {
@@ -66,7 +67,6 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 12px;
-
 }
 
 .nav .item:hover {
