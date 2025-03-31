@@ -55,7 +55,7 @@ body {
     align-items: center;
 }
 
-.nav .item {
+.nav div .item {
     background-color: transparent;
     border: none;
     color: var(--clr-fg-1);
