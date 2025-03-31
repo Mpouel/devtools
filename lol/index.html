@@ -12,7 +12,8 @@
 
     <script>
         console.log = function (...data) {
-            data.forEach((d) => document.writeln(`Log: `, d, `<br>`))
+            document.writeln("Log: ")
+            data.forEach((d) => document.writeln(d, `<br>`))
         }
         document.getElementById('connectButton').addEventListener('click', async () => {
             try {
