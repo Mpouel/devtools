@@ -20,6 +20,12 @@ body {
     padding: 0;
 }
 
+sep {
+    width: 1px;
+    height: 100%;
+    background-color: var(--clr-brd-3);
+}
+
 .devtools {
     display: flex;
     flex-direction: column;
