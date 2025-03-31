@@ -13,7 +13,13 @@
     <script>
         console.log = function (...data) {
             document.write("Log: ")
-            data.forEach((d) => document.write(d, `<br>`))
+            data.forEach((d) => {
+                if (typeof d == Array) {
+                    document.write(d, `<br>`)
+                    d.forEach((t) => document.write(t, `<br>`))
+                }
+                document.write(d, `<br>`)
+            })
         }
         document.getElementById('connectButton').addEventListener('click', async () => {
             try {
@@ -23,7 +29,7 @@
                 });
 
                 console.log('Connected to device:', device);
-                
+
                 // Connect to the GATT server
                 const server = await device.gatt.connect();
 
