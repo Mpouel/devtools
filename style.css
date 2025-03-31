@@ -70,12 +70,6 @@ body {
     cursor: pointer;
 }
 
-.nav .sep {
-    width: 1px;
-    height: 100%;
-    background-color: var(--clr-brd-3);
-}
-
 .nav .item:hover {
     background-color: var(--clr-bg-3);
 }
@@ -83,6 +77,12 @@ body {
 .nav .item.selected {
     color: var(--clr-primary-1);
     box-shadow: inset 0 -3px 0 var(--clr-primary-1);
+}
+
+.nav .sep {
+    width: 1px;
+    height: 100%;
+    background-color: var(--clr-brd-3);
 }
 
 .panel {
