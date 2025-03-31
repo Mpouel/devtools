@@ -34,6 +34,7 @@ body {
     display: flex;
     flex-direction: row;
     background-color: var(--clr-bg-2);
+    box-shadow: inset 0 -2px 0 var(--clr-brd-2);
 }
 
 .nav > div {
@@ -50,8 +51,6 @@ body {
     padding: 2px 7px;
     cursor: pointer;
     transition: background-color 0.3s;
-    border-bottom: 1px solid;
-    border-bottom-color: var(--clr-bg-3);
     display: flex;
     align-items: center;
     align-content: center;
@@ -69,8 +68,7 @@ body {
 
 .nav .item.selected {
     color: var(--clr-primary-1);
-    border-bottom-width: 3px;
-    border-bottom-color: var(--clr-primary-1);
+    box-shadow: inset 0 -3px 0 var(--clr-primary-1);
 }
 
 .panel {
