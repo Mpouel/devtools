@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bluetooth SPP Example</title>
+</head>
+<body>
+    <h1>Bluetooth SPP Example</h1>
+    <button id="connectButton">Connect</button>
+    <pre id="output"></pre>
+
+    <script>
+        console.log = function (...data) {
+            data.forEach((d) => document.writeln(`Log: ${d}\n`))
+        }
+        document.getElementById('connectButton').addEventListener('click', async () => {
+            try {
+                // Request the Bluetooth device
+                const device = await navigator.bluetooth.requestDevice({
+                    filters: [{ services: ['serial'] }]
+                });
+
+                console.log('Connected to device:', device);
+
+                // Get the Serial Port service
+                const server = await device.gatt.connect();
+                const service = await server.getPrimaryService('serial');
+
+                // Get the characteristic for reading data
+                const characteristic = await service.getCharacteristic('tx');
+
+                // Enable notifications to receive data
+                await characteristic.startNotifications().then(char => {
+                    char.addEventListener('characteristicvaluechanged', handleData);
+                });
+
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+
+        function handleData(event) {
+            const data = new TextDecoder().decode(event.target.value);
+            document.getElementById('output').textContent += data;
+        }
+    </script>
+</body>
+</html>
