@@ -18,7 +18,8 @@
             try {
                 // Request the Bluetooth device
                 const device = await navigator.bluetooth.requestDevice({
-                    filters: [{ services: ['serial'] }]
+                    acceptAllDevices: true,
+                    optionalServices: ['battery_service'] // Example optional service
                 });
 
                 console.log('Connected to device:', device);
