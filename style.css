@@ -73,8 +73,23 @@ body {
     border-bottom-color: var(--clr-primary-1);
 }
 
+.panel {
+    height: 100%;
+    width: 100%;
+}
+
 .content {
     flex: 1;
     overflow-y: auto;
     padding: 10px;
+}
+
+.content.top {
+    height: 65%;
+    width: 100%;
+}
+
+.content.bottom {
+    height: 35%;
+    width: 100%;
 }
