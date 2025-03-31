@@ -65,9 +65,12 @@ body {
     justify-content: center;
 }
 
+.nav .item:not(.selected) {
+    cursor: pointer;
+}
+
 .nav .item i {
     text-align: center;
-    cursor: pointer;
 }
 
 .nav .item:hover {
