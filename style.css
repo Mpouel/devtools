@@ -32,7 +32,7 @@ body {
 
 .nav {
     display: flex;
-    flex-direction: flex;
+    flex-direction: row;
     background-color: var(--clr-bg-2);
     box-shadow: inset 0 -2px 0 var(--clr-brd-2);
     width: 100%;
