@@ -38,7 +38,6 @@ body {
     width: 100%;
     align-items: center;
     justify-content: left;
-    padding: 5px 10px;
     box-sizing: border-box;
 }
 
@@ -50,20 +49,18 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 5px;
 }
 
 .nav .item {
     background-color: transparent;
     border: none;
     color: var(--clr-fg-1);
-    padding: 8px 12px;
+    padding: 8px 15px;
     cursor: pointer;
     transition: background-color var(--time-1), color var(--time-1);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px;
 }
 
 .nav .item i {
