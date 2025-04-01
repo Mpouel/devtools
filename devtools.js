@@ -6,13 +6,17 @@ const oError = console.error;
 const devtools = $c("devtools")
 const iframe = $s("iframe");
 let tabs = $a(".pri .item");
+let cTab = $c(".selected");
 
 function switchTab(nTab) {
+    if (cTab.id == nTab) return;
+    
     tabs.forEach((tab) => {
         if (tab.id == nTab) {
-            tab.classList.add("selected")
+            tab.classList.add("selected");
+            cTab = tab;
         } else {
-            tab.classList.remove("selected")
+            tab.classList.remove("selected");
         }
     })
 }
