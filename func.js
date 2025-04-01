@@ -2,8 +2,8 @@ function $i(id) {
     return document.getElementById(id)
 }
 
-function $c(class) {
-    return document.querySelector(`.${class}`)
+function $c(cls) {
+    return document.querySelector(`.${cls}`)
 }
 
 function $n(name) {
