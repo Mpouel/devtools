@@ -9,16 +9,20 @@ let tabs = $a(".pri .item");
 let cTab = $c(".selected");
 
 function switchTab(nTab) {
-    if (cTab.id == nTab) return;
-    
-    tabs.forEach((tab) => {
-        if (tab.id == nTab) {
-            tab.classList.add("selected");
-            cTab = tab;
-        } else {
-            tab.classList.remove("selected");
-        }
-    })
+    try {
+        if (cTab.id == nTab) return;
+
+        tabs.forEach((tab) => {
+            if (tab.id == nTab) {
+                tab.classList.add("selected");
+                cTab = tab;
+            } else {
+                tab.classList.remove("selected");
+            }
+        })
+    } catch (e) {
+        document.writeln("Error: ", e)
+    }
 }
 
 function newLog(...data) {
