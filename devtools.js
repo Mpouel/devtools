@@ -102,4 +102,5 @@ function switchTab(nTab) {
             nTab.classList.remove("selected")
         }
     })
+    document.write(nTab)
 }
