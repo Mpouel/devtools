@@ -80,6 +80,15 @@ body {
     background-color: var(--clr-brd-3);
 }
 
+.nav .check {
+    width: 0;
+    height: 0;
+}
+
+.item:has(> .check:checked) {
+    color: var(--clr-primary-1);
+}
+
 .panel {
     height: 100%;
     width: 100%;
