@@ -95,12 +95,12 @@ function ls() {
 
 }
 
-function switchTab(tab) {
-    tabs.forEach((item) => {
-        if (tabs.id == tab) {
-            item.classList.add("selected")
+function switchTab(nTab) {
+    tabs.forEach((nTab) => {
+        if (tabs.id == nTab) {
+            nTab.classList.add("selected")
         } else {
-            item.classList.remove("selected")
+            nTab.classList.remove("selected")
         }
     })
 }
