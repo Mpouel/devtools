@@ -64,6 +64,10 @@ body {
     font-size: 11px;
 }
 
+.nav div .item:has(> i.bx) {
+    font-style: 12px;
+}
+
 .nav div .item:hover {
     background-color: var(--clr-bg-3);
 }
@@ -73,6 +77,10 @@ body {
     box-shadow: inset 0 -3px 0 var(--clr-primary-1);
     font-size: 12px;
     padding: 6px 13px;
+}
+
+.nav div .item.selected:has(> i.bx) {
+    font-size: 13px;
 }
 
 .nav div .sep {
