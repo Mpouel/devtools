@@ -6,7 +6,7 @@ const oError = console.error;
 const devtools = $c("devtools")
 const iframe = $s("iframe");
 let tabs = $a(".pri .item");
-let cTab = $c(".selected");
+let cTab = $c("selected");
 
 function switchTab(nTab) {
     try {
