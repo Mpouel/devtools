@@ -15,7 +15,6 @@ function switchTab(nTab) {
             tab.classList.remove("selected")
         }
     })
-    document.write(nTab)
 }
 
 function newLog(...data) {
