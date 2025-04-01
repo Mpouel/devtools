@@ -29,6 +29,7 @@ body {
     width: 30vw;
     background-color: var(--clr-bg-1);
     box-sizing: border-box;
+    resize: horizontal;
 }
 
 .nav {
