@@ -3,6 +3,7 @@ const oInfo = console.info;
 const oWarn = console.warn;
 const oError = console.error;
 
+const devtools = $c("devtools")
 const iframe = $s("iframe");
 const pageContent = iframe.ownerDocument;
 let tabs = $a("div.pri > div.item")
