@@ -10,13 +10,15 @@ let tabs = $a(".pri .item");
 let cTab = $c("selected");
 
 resizer.addEventListener("mousedown", (e) => {
+    devtools.style.cursor = " ew-resize";
     document.addEventListener("mousemove", resize);
     document.addEventListener("mouseup", stopResize);
 });
 
 function resize(e) {
-    let newWidth = e.clientX; // Position X de la souris
-    devtools.style.width = `${newWidth}px`; // Applique la nouvelle largeur
+    let newWidth = e.clientX;
+    if (newWidth >= 70 || newWidth <= 300) return;
+    devtools.style.width = `${newWidth}px`;
 }
 
 function stopResize() {
