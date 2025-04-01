@@ -84,9 +84,10 @@ body {
 }
 
 .nav div .sep {
-    width: 1px;
+    width: 2px;
     height: 24px;
     background-color: var(--clr-brd-3);
+    border-radius: 1px;
 }
 
 .nav .check {
