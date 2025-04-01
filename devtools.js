@@ -6,45 +6,7 @@ const oError = console.error;
 const devtools = $c("devtools")
 const iframe = $s("iframe");
 let tabs = $a(".pri .item")
-let console = [];
-
-
-function ls() {
-    let table = document.createElement("table");
-    let tbody = document.createElement("tbody");
-
-    // Créer un en-tête de tableau
-    let thead = document.createElement("thead");
-    let headerRow = document.createElement("tr");
-
-    ["Key", "Value"].forEach(text => {
-        let th = document.createElement("th");
-        th.textContent = text;
-        headerRow.appendChild(th);
-    });
-
-    thead.appendChild(headerRow);
-    table.appendChild(thead);
-
-    // Utiliser forEach pour parcourir localStorage
-    Object.keys(localStorage).forEach(key => {
-        let value = localStorage.getItem(key);
-
-        let row = document.createElement("tr");
-
-        [key, value].forEach(text => {
-            let td = document.createElement("td");
-            td.textContent = text;
-            row.appendChild(td);
-        });
-
-        tbody.appendChild(row);
-    });
-
-    table.appendChild(tbody);
-    content.appendChild(table);
-
-}
+let console;
 
 function switchTab(nTab) {
     tabs.forEach((tab) => {
