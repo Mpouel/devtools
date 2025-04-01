@@ -30,6 +30,7 @@ body {
     background-color: var(--clr-bg-1);
     box-sizing: border-box;
     box-shadow: inset 0 0 1px var(--clr-brd-1);
+    position: relative;
 }
 
 .devtools .resizer {

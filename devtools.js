@@ -4,9 +4,25 @@ const oWarn = console.warn;
 const oError = console.error;
 
 const devtools = $c("devtools")
+const resizer = $c("resizer");
 const iframe = $s("iframe");
 let tabs = $a(".pri .item");
 let cTab = $c("selected");
+
+resizer.addEventListener("mousedown", (e) => {
+    document.addEventListener("mousemove", resize);
+    document.addEventListener("mouseup", stopResize);
+});
+
+function resize(e) {
+    let newWidth = e.clientX; // Position X de la souris
+    devtools.style.width = `${newWidth}px`; // Applique la nouvelle largeur
+}
+
+function stopResize() {
+    document.removeEventListener("mousemove", resize);
+    document.removeEventListener("mouseup", stopResize);
+}
 
 function switchTab(nTab) {
     try {
