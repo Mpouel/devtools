@@ -6,7 +6,7 @@ const oError = console.error;
 const devtools = $c("devtools")
 const iframe = $s("iframe");
 const pageContent = iframe.ownerDocument;
-let tabs = $a("div.pri > div.item")
+let tabs = $a(".pri .item")
 let console = [];
 
 function newLog(...data) {
