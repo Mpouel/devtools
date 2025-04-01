@@ -20,7 +20,7 @@ function resize(e) {
     let userW = window.innerWidth;
     let min = Number(userW / 5)
     let max=  Number(userW / 2)
-    if (newWidth >= min || newWidth <= max) return;
+    if (newWidth <= min || newWidth >= max) return;
     devtools.style.width = `${newWidth}px`;
 }
 
