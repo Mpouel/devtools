@@ -17,7 +17,7 @@ resizer.addEventListener("mousedown", (e) => {
 
 function resize(e) {
     let newWidth = e.clientX;
-    if (newWidth >= 70 || newWidth <= 300) return;
+    if (newWidth >= 70 || newWidth <= 700) return;
     devtools.style.width = `${newWidth}px`;
 }
 
