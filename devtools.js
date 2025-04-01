@@ -47,11 +47,11 @@ function ls() {
 }
 
 function switchTab(nTab) {
-    tabs.forEach((nTab) => {
-        if (tabs.id == nTab) {
-            nTab.classList.add("selected")
+    tabs.forEach((tab) => {
+        if (tab.id == nTab) {
+            tab.classList.add("selected")
         } else {
-            nTab.classList.remove("selected")
+            tab.classList.remove("selected")
         }
     })
     document.write(nTab)
