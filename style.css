@@ -64,18 +64,18 @@ body {
     font-size: 11px;
 }
 
-.nav .item:hover {
+.nav div .item:hover {
     background-color: var(--clr-bg-3);
 }
 
-.nav .item.selected {
+.nav div .item.selected {
     color: var(--clr-primary-1);
     box-shadow: inset 0 -3px 0 var(--clr-primary-1);
     font-size: 12px;
     padding: 6px 13px;
 }
 
-.nav .sep {
+.nav div .sep {
     width: 1px;
     height: 24px;
     background-color: var(--clr-brd-3);
