@@ -8,54 +8,6 @@ const iframe = $s("iframe");
 let tabs = $a(".pri .item")
 let console = [];
 
-function newLog(...data) {
-    data.forEach(log => {
-        
-    });
-}
-
-function newInfo(...data) {
-    data.forEach(log => {
-        
-    });
-}
-
-function newWarn(...data) {
-    data.forEach(log => {
-        
-    });
-}
-
-function newError(...data) {
-
-    data.forEach(log => {
-        
-    });
-}
-
-
-
-
-
-console.log = function (...data) {
-    oLog(data)
-    newLog(data)
-}
-
-console.info = function (...data) {
-    oInfo(data)
-    newInfo(data)
-}
-
-console.warn = function (...data) {
-    oWarn(data)
-    newWarn(data)
-}
-
-console.error = function (...data) {
-    oError(data)
-    newError(data)
-}
 
 function ls() {
     let table = document.createElement("table");
@@ -103,4 +55,53 @@ function switchTab(nTab) {
         }
     })
     document.write(nTab)
+}
+
+function newLog(...data) {
+    data.forEach(log => {
+        
+    });
+}
+
+function newInfo(...data) {
+    data.forEach(log => {
+        
+    });
+}
+
+function newWarn(...data) {
+    data.forEach(log => {
+        
+    });
+}
+
+function newError(...data) {
+
+    data.forEach(log => {
+        
+    });
+}
+
+
+
+
+
+console.log = function (...data) {
+    oLog(data)
+    newLog(data)
+}
+
+console.info = function (...data) {
+    oInfo(data)
+    newInfo(data)
+}
+
+console.warn = function (...data) {
+    oWarn(data)
+    newWarn(data)
+}
+
+console.error = function (...data) {
+    oError(data)
+    newError(data)
 }
