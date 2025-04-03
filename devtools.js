@@ -6,19 +6,22 @@ const oError = console.error;
 const devtools = $c("devtools")
 const resizer = $c("resizer");
 const iframe = $s("iframe");
+const content = $i("top-content");
+const sec = $i("bottom-content");
 let tabs = $a(".pri .item");
 let cTab = $c("selected");
+let cTabN = cTab.id;
 
-resizer.addEventListener("mousedown", (e) => {
+resizer.$e("mousedown", (e) => {
     devtools.style.cursor = " ew-resize";
-    document.addEventListener("mousemove", resize);
-    document.addEventListener("mouseup", stopResize);
+    document.$e("mousemove", resize);
+    document.$e("mouseup", stopResize);
 });
 
 function resize(e) {
     let newWidth = e.clientX;
     let userW = window.innerWidth;
-    let min = Number(userW / 4)
+    let min = Number(userW / 30 * 100)
     let max=  Number(userW / 2)
     if (newWidth <= min) {
         devtools.style.width = `${min}px`;
@@ -30,24 +33,65 @@ function resize(e) {
 }
 
 function stopResize() {
-    document.removeEventListener("mousemove", resize);
-    document.removeEventListener("mouseup", stopResize);
+    document.$re("mousemove", resize);
+    document.$re("mouseup", stopResize);
 }
 
-function switchTab(nTab) {
-    try {
-        if (cTab.id == nTab) return;
+function toElements() {
 
-        tabs.forEach((tab) => {
-            if (tab.id == nTab) {
-                tab.classList.add("selected");
-                cTab = tab;
-            } else {
-                tab.classList.remove("selected");
-            }
-        })
-    } catch (e) {
-        document.writeln("Error: ", e)
+}
+
+function toConsole() {
+
+}
+
+function toSources() {
+
+}
+
+function toLocalS() {
+
+}
+
+function toNetwork() {
+
+}
+
+function toApp() {
+
+}
+
+
+
+function switchTab(nTab) {
+    if (cTab.id == nTab) return;
+
+    tabs.forEach((tab) => {
+        if (tab.id == nTab) {
+            tab.classList.add("selected");
+            cTab = tab;
+            cTabN = tab.id;
+        } else {
+            tab.classList.remove("selected");
+        }
+    })
+
+    switch(nTab) {
+        case 'elements':
+            return toElements();
+        case 'console':
+            return toConsole();
+        case 'sources':
+            return toSources();
+        case 'local-storage':
+            return toLocalS();
+        case 'network':
+            return toNetwork();
+        case 'app':
+            return toApp();
+        default:
+            return;
+
     }
 }
 

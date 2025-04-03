@@ -32,6 +32,17 @@ NodeList.prototype.$ee = function (event, callback) {
     return this;
 }
 
+Element.prototype.$re = function (event, callback) {
+    this.removeEventListener(event, callback);
+    return this;
+}
+
+NodeList.prototype.$ree = function (event, callback) {
+    this.forEach(element => element.removeEventListener(event, callback));
+    return this;
+}
+
+
 
 
 String.prototype.cap = function () {
