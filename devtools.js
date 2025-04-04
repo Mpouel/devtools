@@ -21,7 +21,7 @@ resizer.$e("mousedown", (e) => {
 function resize(e) {
     let newWidth = e.clientX;
     let userW = window.innerWidth;
-    let min = Number(userW / 35 * 100)
+    let min = Number(userW / 30 * 100)
     let max=  Number(userW / 2)
     if (newWidth <= min) {
         devtools.style.width = `${min}px`;
